@@ -24,13 +24,13 @@
     <!-- hero -->
     <div class="w-full px-12 py-4 grid grid-cols-3 gap-6">
         <!-- shop -->
-        <div class="w-full h-[1000px] grid">
-            <img src="../../assets/images/kids.jpg" alt="Kids BJJ" class="object-cover w-full h-full">
+        <div class="w-full h-[1000px] grid overflow-clip">
+            <img src="../../assets/images/kids.jpg" alt="Kids BJJ" class="object-cover w-full h-full hover:scale-105 transition-all duration-700">
         </div>
         
         <!-- bjj academy -->
-        <div class="w-full h-[1000px] grid">
-            <img src="../../assets/images/group.jpg" alt="Kids BJJ" class="object-cover w-full h-full">
+        <div class="w-full h-[1000px] grid overflow-clip">
+            <img src="../../assets/images/group.jpg" alt="Kids BJJ" class="object-cover w-full h-full hover:scale-105 transition-all duration-700">
         </div>
         
         <!-- kids bjj -->
