@@ -7,7 +7,8 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        'barlow': ['Barlow', 'sans-serif']
+        'barlow': ['Barlow', 'sans-serif'],
+        'bebas': ['Bebas Neue', 'sans-serif']
       },
       colors: {
         'sidebar-bg': '#FBFBFB',
