@@ -1,5 +1,5 @@
 <template>
-    <div class="w-full h-fit grid gap-12 px-48 py-4">
+    <div class="w-full h-fit grid gap-12 px-56 py-4">
         <!-- nav bar -->
         <div class="w-full h-[69px] grid items-center grid-cols-3 text-custom-black">
             <!-- menues -->
@@ -26,7 +26,7 @@
         <div class="w-full grid grid-cols-3 gap-6">
             <!-- shop -->
             <div class="w-full h-[1000px] grid overflow-clip relative group rounded-[4px]">
-                <div class="w-full h-full absolute z-10 top-0 left-0 grid bg-custom-black/20">
+                <div class="w-full h-full absolute z-10 top-0 left-0 grid bg-custom-black/10">
                     <!-- body -->
                     <div class="m-auto w-[65%] h-fit grid">
                         <p class="text-[36px] text-white text-center font-bebas">Merchandise</p>
@@ -39,7 +39,7 @@
             
             <!-- bjj academy -->
             <div class="w-full h-[1000px] grid overflow-clip relative group rounded-[4px]">
-                <div class="w-full h-full absolute z-10 top-0 left-0 grid bg-custom-black/20">
+                <div class="w-full h-full absolute z-10 top-0 left-0 grid bg-custom-black/10">
                     <!-- body -->
                     <div class="m-auto w-[65%] h-fit grid">
                         <p class="text-[36px] text-white text-center font-bebas">BRAZILIAN JIU-JITSU</p>
@@ -52,7 +52,7 @@
             
             <!-- kids -->
             <div class="w-full h-[1000px] grid overflow-clip relative group rounded-[4px]">
-                <div class="w-full h-full absolute z-10 top-0 left-0 grid bg-custom-black/20">
+                <div class="w-full h-full absolute z-10 top-0 left-0 grid bg-custom-black/10">
                     <!-- body -->
                     <div class="m-auto w-[65%] h-fit grid">
                         <p class="text-[36px] text-white text-center font-bebas">Kids BJJ</p>
@@ -81,22 +81,24 @@
         </div> -->
         
         <!-- other free trial -->
-        <div class="w-full h-fit grid my-16">
-            <div class="w-fit h-fit flex items-center gap-16 m-auto">
-                <div class="w-fit h-fit grid">
-                    <p class="uppercase font-medium text-[48px] font-bebas -mt-2">Free Trial Class!</p>
+        <div class="py-16 bg-custom-light">
+            <div class="w-full h-fit grid">
+                <div class="w-fit h-fit flex items-center gap-16 m-auto">
+                    <div class="w-fit h-fit grid">
+                        <p class="uppercase font-medium text-[48px] font-bebas -mt-2">Free Trial Class!</p>
+                    </div>
+                    
+
+                    <div class="w-fit h-fit grid">
+                        <p class="text-[18px]">Brazilian Jiu Jutsu, No-Gi, Self-Defense, Kids Class, Adult Class</p>
+                        <p>Visit us and start your Brazilian Jiu Jutsu journey learning from world-class instruction.</p>
+
+                        <button class="w-fit mt-4 uppercase flex itmes-center gap-4 hover:bg-custom-black bg-white border-custom-black hover:text-white text-custom-black px-10 py-2 rounded-[4px] shadow-newdrop hover:animate-vibrate-animate border-[1px] transition-all duration-300">
+                            <p>Schedule Now!</p>
+                        </button>
+                    </div> 
+
                 </div>
-                
-
-                <div class="w-fit h-fit grid">
-                    <p class="text-[18px]">Brazilian Jiu Jutsu, No-Gi, Self-Defense, Kids Class, Adult Class.</p>
-                    <p>Visit us and start your Brazilian Jiu Jutsu journey learning from world-class instruction.</p>
-
-                    <button class="w-fit mt-4 uppercase flex itmes-center gap-4 hover:bg-custom-black border-custom-black hover:text-white text-custom-black px-10 py-2 rounded-[4px] shadow-newdrop hover:animate-vibrate-animate border-[1px] transition-all duration-300">
-                        <p>Schedule Now!</p>
-                    </button>
-                </div> 
-
             </div>
         </div>
 
@@ -121,25 +123,27 @@
         </div>
 
         <!-- reviews -->
-        <div class="w-full h-[250px] grid my-16">
-            <!-- review counter -->
-            <div class="w-full h-fit max-h-[215px] overflow-auto grid py-8 px-48 relative">
-                <!-- stars -->
-                <div class="w-fit h-fit flex items-center">
-                    <Icon v-for="(e, i) in 5" :key="i" icon="meteocons:star-fill" height="24px"/>
-                    <!-- <Icon v-for="(e, i) in 1" :key="i" icon="meteocons:star" height="24px"/> -->
+        <div class="py-16 bg-custom-light">
+            <div class="w-full h-[250px] grid">
+                <!-- review counter -->
+                <div class="w-full h-fit max-h-[215px] overflow-auto grid py-8 px-48 relative">
+                    <!-- stars -->
+                    <div class="w-fit h-fit flex items-center">
+                        <Icon v-for="(e, i) in 5" :key="i" icon="meteocons:star-fill" height="24px"/>
+                        <!-- <Icon v-for="(e, i) in 1" :key="i" icon="meteocons:star" height="24px"/> -->
+                    </div>
+
+                    <!-- review name -->
+                    <p class="text-[18px] font-medium">{{ reviews[1].name }}</p>
+                    <!-- date -->
+                    <p class="text-[18px]">{{ new Date(reviews[1].date).toDateString() }}</p>
+                    <!-- text -->
+                    <p class="mt-4">{{ reviews[1].text }}</p>
                 </div>
 
-                <!-- review name -->
-                <p class="text-[18px] font-medium">{{ reviews[0].name }}</p>
-                <!-- date -->
-                <p class="text-[18px]">{{ new Date(reviews[0].date).toDateString() }}</p>
-                <!-- text -->
-                <p class="mt-4">{{ reviews[1].text }}</p>
-            </div>
-
-            <div class="w-fit h-[35px] mx-auto flex items-center gap-2 text-custom-gray/50">
-                <Icon v-for="(e, i) in 5" :key="i" icon="oui:dot" height="24px" :class="i == 0 ? 'text-custom-black' : ''" class="cursor-pointer" />
+                <div class="w-fit h-[35px] mx-auto flex items-center gap-2 text-custom-gray/50">
+                    <Icon v-for="(e, i) in 5" :key="i" icon="oui:dot" height="24px" :class="i == 0 ? 'text-custom-black' : ''" class="cursor-pointer" />
+                </div>
             </div>
         </div>
 

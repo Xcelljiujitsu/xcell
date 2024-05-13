@@ -23,7 +23,7 @@ module.exports = {
         'custom-orange': '#F59C4A',
         'custom-yellow': '#F5F06E',
         'custom-bg': '#F5F5F5',
-        'custom-light': '#DEDEDE',
+        'custom-light': '#F9F9FA',
         'custom-light-gray': '#939498'
       },
       boxShadow: {
