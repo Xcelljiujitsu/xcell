@@ -103,22 +103,22 @@
         </div>
 
         <!-- about xcell bjj -->
-        <div class="w-full h-fit lg:h-[800px] grid lg:grid-cols-2 gap-4 py-8 lg:py-0 lg:bg-black group rounded-[4px] relative">
+        <div class="w-full h-fit lg:h-[800px] grid lg:grid-cols-2 gap-4 py-8 group rounded-[4px] relative">
             <!-- mobile borders -->
-            <div class="top-0 left-0 absolute lg:hidden h-[25%] w-[25%] border-custom-black border-l-[3px] border-t-[3px] lg:border-0 rounded-tl-[4px]"></div>
-            <div class="bottom-0 right-0 absolute lg:hidden h-[25%] w-[25%] border-custom-black border-r-[3px] border-b-[3px] lg:border-0 rounded-br-[4px]"></div>
+            <div class="top-0 left-0 absolute h-[25%] w-[25%] border-custom-black border-l-[3px] border-t-[3px] rounded-tl-[4px]"></div>
+            <div class="bottom-0 right-0 absolute h-[25%] w-[25%] border-custom-black border-r-[3px] border-b-[3px] rounded-br-[4px]"></div>
 
             <!-- image -->
-            <div class="w-full h-full hidden lg:grid">
+            <!-- <div class="w-full h-full hidden lg:grid">
                 <img src="../../assets/images/xcell_bjj.jpg" alt="Xcell BJJ" class="m-auto w-[50%] lg:w-[80%] xl:w-[6575%] 2xl:w-[65%]">
-            </div>
+            </div> -->
             <!-- mobile image -->
-            <div class="w-full h-full lg:hidden grid">
+            <div class="w-full h-full grid">
                 <img src="../../assets/images/invert_xcell_bjj.png" alt="Xcell BJJ" class="m-auto w-[50%] lg:w-[80%] xl:w-[6575%] 2xl:w-[65%]">
             </div>
 
             <!-- content -->
-            <div class="w-[90%] md:w-[75%] lg:w-full h-full grid mx-auto lg:mx-0 text-custom-black lg:text-white group-hover:text-custom-black transition-all duration-200 shadow-newdrop lg:shadow-none">
+            <div class="w-[90%] h-full grid mx-auto lg:mx-0 text-custom-black transition-all duration-200 shadow-newdrop">
                 <div class="w-[90%] md:w-[80%] lg:w-[75%] 2xl:w-[65%] m-auto h-fit px-6 group-hover:bg-opacity-100 bg-opacity-5 bg-white rounded-[2px] transition-all duration-200">
                     <div class="w-full border-t-[1px] border-white py-12 grid gap-8 ">
                         <p class="font-semibold text-[28px] md:text-[36px] xl:text-[42px] 2xl:text-[48px] font-bebas text-center lg:text-left">Welcome to the Family</p>
