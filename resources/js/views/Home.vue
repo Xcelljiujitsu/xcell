@@ -118,7 +118,7 @@
             </div>
 
             <!-- content -->
-            <div class="w-[90%] h-full grid mx-auto lg:mx-0 text-custom-black transition-all duration-200 shadow-newdrop">
+            <div class="w-[90%] h-full grid mx-auto text-custom-black transition-all duration-200 shadow-newdrop">
                 <div class="w-[90%] md:w-[80%] lg:w-[75%] 2xl:w-[65%] m-auto h-fit px-6 group-hover:bg-opacity-100 bg-opacity-5 bg-white rounded-[2px] transition-all duration-200">
                     <div class="w-full border-t-[1px] border-white py-12 grid gap-8 ">
                         <p class="font-semibold text-[28px] md:text-[36px] xl:text-[42px] 2xl:text-[48px] font-bebas text-center lg:text-left">Welcome to the Family</p>

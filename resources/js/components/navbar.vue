@@ -11,7 +11,13 @@
             <!-- logo -->
             <img src="../../assets/images/logo.png" alt="Xcell Logo" class="w-[72px] h-[72px] mb-12">
 
-            <p>Xcell Academy</p>
+            <div class="w-fit h-fit flex items-center gap-2">
+                <p>Xcell Academy</p>
+                <div class="w-[24px] h-[24px]">
+                    <Icon icon="pepicons-print:angle-up" height="24px" class=" text-custom-gray" />
+                </div>
+            </div>
+
             <p>Shop</p>
             <p>Members</p>
             <p>Content</p>
@@ -46,7 +52,13 @@
  
             <!-- menues -->
             <div class="w-full hidden xl:flex items-center gap-6 text-[14px] xl:text-[16px] text-custom-gray">
-                <p>Xcell Academy</p>
+                <button class="w-fit h-fit flex items-center gap-2">
+                    <p>Xcell Academy</p>
+                    <div class="w-[24px] h-[24px]">
+                        <Icon icon="pepicons-print:angle-up" height="24px" class=" text-custom-gray" />
+                    </div>
+                </button>
+
                 <p>Shop</p>
                 <p>Members</p>
                 <p>Content</p>
