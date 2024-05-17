@@ -15,7 +15,7 @@ export default {
 }
 body {
   /* background-color: #F5F5F5; */
-  background-color: #fff;
+  background-color: #F9F9FA;
 }
 @media (-webkit-device-pixel-ratio: 1.10) {
     :root {
