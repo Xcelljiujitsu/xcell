@@ -9,7 +9,12 @@
         <!-- nav -->
         <div class="w-full h-fit grid pr-8 gap-4 text-[16px] md:text-[18px]">
             <!-- logo -->
-            <img src="../../assets/images/logo.png" alt="Xcell Logo" class="w-[72px] h-[72px] mb-12">
+            <img src="../../assets/images/logo.png" alt="Xcell Logo" class="w-[72px] h-[72px]">
+
+            <div class="my-6 w-fit h-fit flex items-center gap-4">
+                <Icon icon="mdi:phone" height="24px" class="" />
+                <p>CALL US NOW! (561) 619 &mdash; 6969</p>
+            </div>
 
             <!-- academy dropdown -->
             <div class="w-fit h-fit grid items-center gap-2 relative">
@@ -24,14 +29,14 @@
                 <!-- dropdown menu -->
                 <div v-if="slider_dropdown" class="w-[200px] h-fit text-left grid py-4 bg-white rounded-[4px] overflow-y-auto  transition-all duration-300 cursor-default" style="z-index: 20 !important;">
                     <div id="nav_dropdown" class="w-full h-fit grid gap-2 text-[14px]">
-                        <a v-for="(item, index) in menu_options" :key="index" href="#" class="truncate border-l-[3px] border-transparent hover:border-custom-black hover:bg-sidebar-bg px-4 py-[6px]">{{ item.label }}</a>
+                        <a v-for="(item, index) in menu_options" :key="index" :href="item.href" class="truncate border-l-[3px] border-transparent hover:border-custom-black hover:bg-sidebar-bg px-4 py-[6px]">{{ item.label }}</a>
                     </div>
                 </div>
             </div>
 
-            <p>Shop</p>
-            <p>Members</p>
-            <p>Content</p>
+            <a href="/coming-soon">Shop</a>
+            <a href="/coming-soon">Members</a>
+            <a href="/coming-soon">Content</a>
             <p @click="$emit('contact'); show = false;" class="cursor-pointer">Get In Touch</p>
         </div>
 
@@ -39,10 +44,7 @@
         <div class="w-full h-fit py-4 bottom-0 left-0 absolute grid justify-items-center gap-4">
             <!-- social media -->
             <div class="w-fit h-fit flex items-center gap-6 text-custom-gray/70">
-                <Icon icon="mdi:instagram" height="24px" />
-                <Icon icon="mdi:facebook" height="24px" />
-                <Icon icon="mdi:google-maps" height="24px" />
-                <Icon icon="mdi:google" height="24px" />
+                <a v-for="(social, index) in socials" :key="index" :href="social.link" target="_blank"><Icon :icon="social.icon" height="24px" /></a>
             </div>
 
             <!-- pages -->
@@ -73,14 +75,14 @@
                     <!-- dropdown menu -->
                     <div v-if="dropdown" class="w-[200px] h-[220px] text-left grid py-4 bg-white rounded-[4px] shadow-dropdown overflow-y-auto absolute -bottom-[230px] -left-4 transition-all duration-300 cursor-default dropdown-elm" style="z-index: 20 !important;">
                         <div id="nav_dropdown" class="w-full h-fit grid gap-2 text-[14px] dropdown-elm">
-                            <a v-for="(item, index) in menu_options" :key="index" href="#" class="truncate border-l-[3px] border-transparent hover:border-custom-black hover:bg-sidebar-bg px-4 py-[6px] dropdown-elm">{{ item.label }}</a>
+                            <a v-for="(item, index) in menu_options" :key="index" :href="item.href" class="truncate border-l-[3px] border-transparent hover:border-custom-black hover:bg-sidebar-bg px-4 py-[6px] dropdown-elm">{{ item.label }}</a>
                         </div>
                     </div>
                 </div>
 
-                <p>Shop</p>
-                <p>Members</p>
-                <p>Content</p>
+                <a href="/coming-soon">Shop</a>
+                <a href="/coming-soon">Members</a>
+                <a href="/coming-soon">Content</a>
             </div>
             
             <!-- menues -->
@@ -88,7 +90,7 @@
                 <img src="../../assets/images/logo.png" alt="Xcell Logo" class="w-[72px] h-[72px] md:hidden">
                 <div class="w-fit h-fit grid items-center justify-items-center">
                     <!-- <a href="/" class="hidden md:block font-beb absolute text-custom-black">Xcell Jiu Jitsu Academy</a> -->
-                    <img src="../../assets/images/nav_logo.png" alt="Xcell Logo" class="hidden md:block h-[75px] lg:h-[90px]">
+                    <a href="/"><img src="../../assets/images/nav_logo.png" alt="Xcell Logo" class="hidden md:block h-[75px] lg:h-[90px]"></a>
                 </div>
             </div>
 
@@ -98,14 +100,14 @@
 
                 <!-- phone number -->
                 <button class="w-fit h-fit hidden md:flex items-center gap-2">
-                    <p class="grid"><span class="font-medium">CALL US NOW!</span> (561) 619 &mdash; 6969</p>
+                    <a href="tel:5616196969"><p class="grid"><span class="font-medium">CALL US NOW!</span> (561) 619 &mdash; 6969</p></a>
                 </button>
 
                 <!-- cart -->
-                <div class="w-fit h-fit flex items-center gap-2">
+                <a href="/coming-soon" class="w-fit h-fit flex items-center gap-2">
                     <p>Cart</p>
                     <Icon icon="solar:cart-broken" height="24px" />
-                </div>
+                </a>
             </div>
         </div>
 </template>
@@ -128,25 +130,48 @@ export default {
                     label: "Kids Jiu Jitsu",
                     click: () => {
 
-                    }
+                    },
+                    href: "#"
                 },
                 {
                     label: "Adult Jiu Jitsu",
                     click: () => {
 
-                    }
+                    },
+                    href: "#"
                 },
                 {
                     label: "Book a Private",
                     click: () => {
-
-                    }
+                        this.$router.push({name: 'Coming Soon'})
+                    },
+                    href: "/coming-soon"
                 },
                 {
                     label: "Class Schedule",
                     click: () => {
 
-                    }
+                    },
+                    href: "#"
+                }
+            ],
+
+            socials: [
+                {
+                    icon: "mdi:instagram",
+                    link: "https://www.instagram.com/xcelljiujitsu/?hl=en"
+                },
+                {
+                    icon: "mdi:facebook",
+                    link: "https://www.facebook.com/XcellJiuJitsu/"
+                },
+                {
+                    icon: "mdi:google-maps",
+                    link: "https://www.google.com/maps/place/Xcell+Jiu+Jitsu+Academy/@26.5514945,-80.076186,17z/data=!3m1!4b1!4m6!3m5!1s0x88d8d8c9a304bfdf:0xf1eed7caa87a4e89!8m2!3d26.5514897!4d-80.0736111!16s%2Fg%2F11g6mh4hc1?entry=ttu"
+                },
+                {
+                    icon: "mdi:google",
+                    link: "https://www.google.com/search?q=xcell+jujutsu"
                 }
             ]
         }

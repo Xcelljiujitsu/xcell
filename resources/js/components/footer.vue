@@ -73,10 +73,7 @@
 
             <!-- social media -->
             <div class="w-fit h-fit flex items-center gap-6 md:ml-6 text-custom-gray/70">
-                <Icon icon="mdi:instagram" height="24px" />
-                <Icon icon="mdi:facebook" height="24px" />
-                <Icon icon="mdi:google-maps" height="24px" />
-                <Icon icon="mdi:google" height="24px" />
+                <a v-for="(social, index) in socials" :key="index" :href="social.link" target="_blank"><Icon :icon="social.icon" height="24px" /></a>
             </div>
         </div>
 
@@ -91,7 +88,7 @@
                 <!-- phone and email -->
                 <p><a href="tel:5616196969">(561) 619 &mdash; 6969</a> <span class="px-2">&#124;</span> <a href="mailto:xcelljiujitsu@gmail.com">xcelljiujitsu@gmail.com</a></p>
                 <!-- address -->
-                <p>975 Gatewat Blvd #101-102, Boynton Beach, FL 33463</p>
+                <a target="_blank" href="https://www.google.com/maps/place/Xcell+Jiu+Jitsu+Academy/@26.5514945,-80.076186,17z/data=!3m1!4b1!4m6!3m5!1s0x88d8d8c9a304bfdf:0xf1eed7caa87a4e89!8m2!3d26.5514897!4d-80.0736111!16s%2Fg%2F11g6mh4hc1?entry=ttu">975 Gatewat Blvd #101-102, Boynton Beach, FL 33463</a>
             </div>
         </div>
     </div>
@@ -122,7 +119,32 @@ export default {
                 last_name: "",
                 phone: "",
                 email: ""
-            }
+            },
+
+            socials: [
+                {
+                    icon: "mdi:instagram",
+                    link: "https://www.instagram.com/xcelljiujitsu/?hl=en"
+                },
+                {
+                    icon: "mdi:facebook",
+                    link: "https://www.facebook.com/XcellJiuJitsu/"
+                },
+                {
+                    icon: "mdi:google-maps",
+                    link: "https://www.google.com/maps/place/Xcell+Jiu+Jitsu+Academy/@26.5514945,-80.076186,17z/data=!3m1!4b1!4m6!3m5!1s0x88d8d8c9a304bfdf:0xf1eed7caa87a4e89!8m2!3d26.5514897!4d-80.0736111!16s%2Fg%2F11g6mh4hc1?entry=ttu"
+                },
+                {
+                    icon: "mdi:google",
+                    link: "https://www.google.com/search?q=xcell+jujutsu"
+                }
+            ]
+        }
+    },
+    mounted(){
+        if(this.set_type == 'request'){
+            this.verify_code = false;
+            this.type = 'request';
         }
     },
     watch: {
@@ -131,6 +153,9 @@ export default {
                 case 'request':
                     this.verify_code = false;
                     this.type = 'request';
+                    break;
+                case 'subscribe':
+                    this.type = 'subscribe';
                     break;
                 default:
                     break;

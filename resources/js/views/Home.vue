@@ -26,7 +26,7 @@
             <!-- hero -->
             <div class="w-full hidden md:grid grid-cols-3 gap-6">
                 <!-- shop -->
-                <div class="w-full md:h-[500px] lg:h-[700px] xl:h-[1000px] grid overflow-clip relative group rounded-[4px]">
+                <button @click="$router.push({name: 'Coming Soon'})" class="w-full md:h-[500px] lg:h-[700px] xl:h-[1000px] grid overflow-clip relative group rounded-[4px]">
                     <div class="w-full h-full absolute z-10 top-0 left-0 grid bg-custom-black/10">
                         <!-- body -->
                         <div class="m-auto w-[65%] h-fit grid">
@@ -36,10 +36,10 @@
 
                     <!-- background -->
                     <img src="../../assets/images/shop.jpg" alt="Merchandise" class="object-cover w-full h-full group-hover:scale-105 transition-all duration-700 z-0">
-                </div>
+                </button>
                 
                 <!-- bjj academy -->
-                <div class="w-full md:h-[500px] lg:h-[700px] xl:h-[1000px] grid overflow-clip relative group rounded-[4px]">
+                <button class="w-full md:h-[500px] lg:h-[700px] xl:h-[1000px] grid overflow-clip relative group rounded-[4px]">
                     <div class="w-full h-full absolute z-10 top-0 left-0 grid bg-custom-black/10">
                         <!-- body -->
                         <div class="m-auto w-[65%] h-fit grid">
@@ -49,10 +49,10 @@
 
                     <!-- background -->
                     <img src="../../assets/images/academy0.jpg" alt="Adult BJJ" class="object-cover w-full h-full group-hover:scale-105 transition-all duration-700 z-0">
-                </div>
+                </button>
                 
                 <!-- kids -->
-                <div class="w-full md:h-[500px] lg:h-[700px] xl:h-[1000px] grid overflow-clip relative group rounded-[4px]">
+                <button class="w-full md:h-[500px] lg:h-[700px] xl:h-[1000px] grid overflow-clip relative group rounded-[4px]">
                     <div class="w-full h-full absolute z-10 top-0 left-0 grid bg-custom-black/10">
                         <!-- body -->
                         <div class="m-auto w-[65%] h-fit grid">
@@ -62,7 +62,7 @@
 
                     <!-- background -->
                     <img src="../../assets/images/kids_class.jpg" alt="Kids BJJ" class="object-cover w-full h-full group-hover:scale-105 transition-all duration-700 z-0">
-                </div>
+                </button>
             </div>
 
             <!-- free trial -->

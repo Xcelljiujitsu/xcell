@@ -1,17 +1,24 @@
 import { createRouter, createWebHistory } from "vue-router";
+
 import Home from "./views/Home.vue";
+import ComingSoon from "./views/ComingSoon.vue";
+import NotFound from "./views/404.vue";
 
 const routes = [
-    // {
-    //     // Catch all for routes that do not exist
-    //     // path: "/:catchAll(.*)",
-    //     // name: "NotFound",
-    //     // component: NotFound,
-    // },
+    {
+        path: "/:catchAll(.*)",
+        name: "NotFound",
+        component: NotFound,
+    },
     {
         path: "/",
         name: "Home",
         component: Home,
+    },
+    {
+        path: "/coming-soon",
+        name: "Coming Soon",
+        component: ComingSoon,
     },
     // {
     //     // restricted view that required authentication to enter
