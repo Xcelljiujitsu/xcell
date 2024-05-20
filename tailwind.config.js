@@ -28,6 +28,8 @@ module.exports = {
       },
       boxShadow: {
       'newdrop': 'rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;',
+      'dropdown': 'rgba(0, 0, 0, .1) 0 2px 12px 0',
+      'carddrop': 'rgba(0, 0, 0, 0.133) 0px 1.6px 3.6px 0px, rgba(0, 0, 0, 0.11) 0px 0.3px 0.9px 0px'
       },
       animation: {
         'shadow-pop': 'shadow-pop-tr 0.3s cubic-bezier(0.470, 0.000, 0.745, 0.715) both',

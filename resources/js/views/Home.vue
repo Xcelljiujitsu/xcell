@@ -1,7 +1,7 @@
 <template>
     <div class="w-full h-fit grid gap-12 md:px-12 lg:px-16 xl:28 2xl:px-44">
         <div class="w-full h-fit grid gap-12 px-6 pt-16 md:pt-4 pb-4 bg-white">
-            <Navbar />
+            <Navbar @contact="gotoContactRequest" />
 
             <!-- mobile hero -->
             <div class="w-full h-[500px] grid md:hidden relative overflow-clip rounded-[4px]">
@@ -119,7 +119,7 @@
                 </div>
 
                 <!-- content -->
-                <div class="w-[90%] h-full grid mx-auto text-custom-black transition-all duration-200 shadow-newdrop">
+                <div class="w-[90%] h-full grid mx-auto text-custom-black transition-all duration-200 shadow-carddrop">
                     <div class="w-[90%] md:w-[80%] lg:w-[75%] 2xl:w-[65%] m-auto h-fit px-6 group-hover:bg-opacity-100 bg-opacity-5 bg-white rounded-[2px] transition-all duration-200">
                         <div class="w-full border-t-[1px] border-white py-12 grid gap-8 ">
                             <p class="font-semibold text-[28px] md:text-[36px] xl:text-[42px] 2xl:text-[48px] font-bebas text-center lg:text-left">Welcome to the Family</p>
@@ -158,27 +158,7 @@
 
             <!-- request more information -->
 
-
-            <div class="w-full h-fit grid md:grid-cols-2 gap-8 md:gap-4">
-                <div class="w-full h-fit m-auto grid order-2 md:order-1">
-                    <div class="w-fit h-fit md:mx-auto grid">
-                        <p class="font-bebas text-[28px] md:text-[36px] xl:text-[42px] 2xl:text-[48px]">Get Started Today</p>
-                        <p class="text-[12px] md:text-[14px] xl:text-[16px]">ENROLL TO RECEIVE DIRECT ACCESS TO EXCLUSIVE OFFERS, PRODUCT RELEASES, AND MORE!</p>
-                        <div class="w-fit xl:w-[450px] h-[48px] flex border-[2px] border-black rounded-[4px] mt-6">
-                            <input type="text" class="w-full border-none ring-0 text-[14px]" placeholder="Enter your email address">
-                            <button class="w-[130px] bg-black text-white uppercase text-[12px]">Subscribe</button>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="w-full h-fit grid m-auto order-1 md:order-2">
-                    <div class="w-full xl:w-[545px] h-[400px] md:h-[700px] xl:h-[970px] grid m-auto relative overflow-hidden rounded-[8px] md:rounded-[4px] shadow-newdrop">
-                        <img src="../../assets/images/professor_gatche.jpg" alt="Professor Competition" class="object-cover -transform-y-20 md:-transform-y-0 w-full h-full">
-                    </div>
-                </div>
-            </div>
-
-            <Footer />
+            <Footer :set_type="footer_type" />
         </div>
     </div>
 </template>
@@ -195,6 +175,8 @@ export default {
         return {
             hero: 1,
             review: 0,
+
+            footer_type: "",
 
             reviews: [
                 {
@@ -213,6 +195,11 @@ export default {
     mounted(){
         this.nextHero(0);
         this.nextReview(-1);
+
+        if('request_form' in this.$route.query){
+            this.$router.replace({query: {}})
+            this.gotoContactRequest()
+        }
     },
     watch: {
         hero(value){
@@ -236,6 +223,15 @@ export default {
             setTimeout(() => {
                 this.nextReview(this.review);
             }, 5000);
+        },
+
+        gotoContactRequest(){
+            this.footer_type = "";
+            
+            setTimeout(() => {
+                this.footer_type = 'request';
+                document.getElementById("contact_form").scrollIntoView(true);
+            }, 20);
         }
     },
     components: {
