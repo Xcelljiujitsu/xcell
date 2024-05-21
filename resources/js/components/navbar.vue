@@ -40,7 +40,7 @@
             <p @click="$emit('contact'); show = false;" class="cursor-pointer">Get In Touch</p>
         </div>
 
-        <!-- footer -->
+        <!-- slider footer -->
         <div class="w-full h-fit py-4 bottom-0 left-0 absolute grid justify-items-center gap-4">
             <!-- social media -->
             <div class="w-fit h-fit flex items-center gap-6 text-custom-gray/70">
@@ -90,7 +90,7 @@
                 <img src="../../assets/images/logo.png" alt="Xcell Logo" class="w-[72px] h-[72px] md:hidden">
                 <div class="w-fit h-fit grid items-center justify-items-center">
                     <!-- <a href="/" class="hidden md:block font-beb absolute text-custom-black">Xcell Jiu Jitsu Academy</a> -->
-                    <a href="/"><img src="../../assets/images/nav_logo.png" alt="Xcell Logo" class="hidden md:block h-[75px] lg:h-[90px]"></a>
+                    <a href="/"><img src="../../assets/images/nav_logo_bebas.png" alt="Xcell Logo" class="hidden md:block h-[75px] lg:h-[90px]"></a>
                 </div>
             </div>
 
