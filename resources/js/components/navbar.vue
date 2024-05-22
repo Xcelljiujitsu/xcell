@@ -131,14 +131,14 @@ export default {
                     click: () => {
 
                     },
-                    href: "#"
+                    href: "/kids-brazilian-jiu-jitsu"
                 },
                 {
                     label: "Adult Jiu Jitsu",
                     click: () => {
 
                     },
-                    href: "#"
+                    href: "/adult-brazilian-jiu-jitsu"
                 },
                 {
                     label: "Book a Private",

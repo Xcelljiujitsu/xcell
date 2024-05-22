@@ -39,7 +39,7 @@
                 </button>
                 
                 <!-- bjj academy -->
-                <button class="w-full md:h-[500px] lg:h-[700px] xl:h-[1000px] grid overflow-clip relative group rounded-[4px]">
+                <button @click="$router.push({name: 'Adult BJJ'})" class="w-full md:h-[500px] lg:h-[700px] xl:h-[1000px] grid overflow-clip relative group rounded-[4px]">
                     <div class="w-full h-full absolute z-10 top-0 left-0 grid bg-custom-black/10">
                         <!-- body -->
                         <div class="m-auto w-[65%] h-fit grid">
@@ -52,7 +52,7 @@
                 </button>
                 
                 <!-- kids -->
-                <button class="w-full md:h-[500px] lg:h-[700px] xl:h-[1000px] grid overflow-clip relative group rounded-[4px]">
+                <button @click="$router.push({name: 'Kids BJJ'})" class="w-full md:h-[500px] lg:h-[700px] xl:h-[1000px] grid overflow-clip relative group rounded-[4px]">
                     <div class="w-full h-full absolute z-10 top-0 left-0 grid bg-custom-black/10">
                         <!-- body -->
                         <div class="m-auto w-[65%] h-fit grid">
@@ -131,33 +131,12 @@
                 </div>
             </div>
 
-            <!-- reviews -->
-            <div class="lg:py-10 2xl:py-16 bg-custom-light relative">
-                <div class="w-full h-[250px] grid justify-items-center">
-                    <!-- review counter -->
-                    <div v-for="(item, index) in reviews" :key="index" :class="review == index ? 'opacity-100' : 'opacity-0'" class="w-full h-fit max-h-[215px] overflow-auto grid py-4 2xl:py-8 px-12 md:px-20 2xl:px-42 transition-opacity duration-700 absolute left-0 lg:top-10 2xl:top-16">
-                        <!-- stars -->
-                        <div class="w-fit h-fit flex items-center">
-                            <Icon v-for="(e, i) in 5" :key="i" icon="meteocons:star-fill" height="24px"/>
-                            <!-- <Icon v-for="(e, i) in 1" :key="i" icon="meteocons:star" height="24px"/> -->
-                        </div>
+            <Reviews />
 
-                        <!-- review name -->
-                        <p class="text-[14px] md:text-[16px] 2xl:text-[18px] font-medium">{{ item.name }}</p>
-                        <!-- date -->
-                        <p class="text-[14px] md:text-[16px] 2xl:text-[18px]">{{ new Date(item.date).toDateString() }}</p>
-                        <!-- text -->
-                        <p class="text-[12px] md:text-[14px] 2xl:text-[16px] mt-4">{{ item.text }}</p>
-                    </div>
+            <FAQ transparent_bg=""/>
 
-                    <div class="w-fit h-[35px] flex items-center gap-2 text-custom-gray/50 absolute bottom-0">
-                        <Icon v-for="(e, i) in reviews.length" :key="i" icon="oui:dot" height="24px" :class="review == i ? 'text-custom-black' : ''" class="cursor-pointer" />
-                    </div>
-                </div>
-            </div>
-
-            <!-- request more information -->
-
+            <GoogelMaps />
+            
             <Footer :set_type="footer_type" />
         </div>
     </div>
@@ -168,33 +147,20 @@
 import { Icon } from '@iconify/vue';
 import Navbar from '../components/navbar.vue';
 import Footer from '../components/footer.vue';
+import Reviews from '../components/reviews.vue';
+import FAQ from '../components/faq.vue';
+import GoogelMaps from '../components/googelMaps.vue';
 
 export default {
     name: "Home",
     data(){
         return {
             hero: 1,
-            review: 0,
-
             footer_type: "",
-
-            reviews: [
-                {
-                    name: "Pamela Moser",
-                    date: "11/12/2023",
-                    text: "Out 8 yr old grandson goes here. He loves it!! Jorge is great with the kids as well as his assistance. Would highly recommend this place."
-                },
-                {
-                    name: "Justin Andrew",
-                    date: "12/23/2023",
-                    text: "Xcell is a fantastic palce! Clean, spacious, stylish, welcoming, warm, and a wonderful team to make you feel at home. Professor Santiago is a seasoned pro with an eye for meticulous detail, and he shares his knowledge with joy and a passion for the art. Greab vibes, great jiu jitsu; I highly highly recommend Xcell Academy."
-                }
-            ]
         }
     },
     mounted(){
         this.nextHero(0);
-        this.nextReview(-1);
 
         if('request_form' in this.$route.query){
             this.$router.replace({query: {}})
@@ -202,12 +168,7 @@ export default {
         }
     },
     watch: {
-        hero(value){
-            
-        },
-        review(value){
-            
-        }
+
     },
     methods: {
         nextHero(value){
@@ -215,13 +176,6 @@ export default {
 
             setTimeout(() => {
                 this.nextHero(this.hero);
-            }, 5000);
-        },
-        nextReview(value){
-            this.review = (value < this.reviews.length - 1 ) ? value + 1 : 0;
-
-            setTimeout(() => {
-                this.nextReview(this.review);
             }, 5000);
         },
 
@@ -238,6 +192,9 @@ export default {
         Icon,
 
         Navbar,
+        Reviews,
+        FAQ,
+        GoogelMaps,
         Footer
     }
 }
