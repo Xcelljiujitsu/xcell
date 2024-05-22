@@ -43,7 +43,7 @@
                     </div>
 
                     <!-- weekends -->
-                    <div v-if="view == 'adult'" class="w-[80%] h-fit grid gap-4 mx-auto mt-12">
+                    <div class="w-[80%] h-fit grid gap-4 mx-auto mt-12">
                         <p class="text-center uppercase text-[14px] font-medium">saturday <span class="ml-2 font-medium">2 hours</span></p>
 
                         <!-- headers -->
