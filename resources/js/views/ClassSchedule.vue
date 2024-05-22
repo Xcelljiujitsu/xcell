@@ -44,7 +44,7 @@
 
                     <!-- weekends -->
                     <div v-if="view == 'adult'" class="w-[80%] h-fit grid gap-4 mx-auto mt-12">
-                        <p class="text-center uppercase text-[14px] font-medium">saturday</p>
+                        <p class="text-center uppercase text-[14px] font-medium">saturday <span class="ml-2 font-medium">2 hours</span></p>
 
                         <!-- headers -->
                         <div class="w-full h-fit flex items-center gap-2 mt-4 font-semibold uppercase text-[14px] md:text-[15px]">
@@ -55,7 +55,7 @@
                         <!-- weekend classes -->
                         <div class="w-full h-fit flex items-center gap-2 uppercase text-[12px] md:text-[14px]">
                             <p class="w-[78px] min-w-[78px]">10:00 AM</p>
-                            <p class="w-full">Open Mat - 2 hours</p>
+                            <p class="w-full">Open Mat</p>
                         </div>
                     </div>
                 </div>
