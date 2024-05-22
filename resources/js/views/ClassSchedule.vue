@@ -30,7 +30,7 @@
                         <div v-for="(item, index) in (view == 'adult' ? adult_weekdays : kids_weekdays)" :key="index" class="w-full h-fit flex truncate md:items-center gap-2 uppercase text-[12px] md:text-[14px] relative">
                             <p class="w-[78px] min-w-[78px]">{{ item.time }}</p>
                             <div class="w-full h-fit grid md:flex items-center truncate gap-1 md:gap-2 relative">
-                                <p class="w-full truncate">{{ item.class }}</p>
+                                <p class="w-full truncate">{{ item.class.replace('-', '&mdash;') }}</p>
 
                                 <!-- class days -->
                                 <div class="w-fit h-fit flex items-center gap-2 md:absolute md:right-0">
@@ -95,44 +95,44 @@ export default {
             adult_weekdays: [
                 {
                     time: "7:00 AM",
-                    class: "Adults BJJ All Levels",
+                    class: "Adults BJJ - All Levels",
                     days: "TT"
                 },
                 {
                     time: "12:00 PM",
-                    class: "Adults BJJ All Levels",
+                    class: "Adults BJJ - All Levels",
                     days: "MWF"
                 },
                 {
                     time: "6:30 PM",
-                    class: "Adults BJJ All Levels",
+                    class: "Adults BJJ - All Levels",
                     days: "MW"
                 },
                 {
                     time: "6:30 PM",
-                    class: "Adults BJJ Beginners",
+                    class: "Adults BJJ - Beginners",
                     days: "TT"
                 },
                 {
                     time: "7:30 PM",
-                    class: "Adults BJJ Beginners",
+                    class: "Adults BJJ - Beginners",
                     days: "MW"
                 },
                 {
                     time: "7:30 PM",
-                    class: "Adults BJJ No Gi",
+                    class: "Adults BJJ - No Gi",
                     days: "TT"
                 },
             ],
             kids_weekdays: [
                 {
                     time: "4:45 PM",
-                    class: "Kids BJJ 5 and 6 Yrs",
+                    class: "Kids BJJ - 5 and 6 Yrs",
                     days: "MW"
                 },
                 {
                     time: "5:30 PM",
-                    class: "Kids BJJ 7 - 11 Yrs",
+                    class: "Kids BJJ - 7 to 11 Yrs",
                     days: "MTWT"
                 }
             ]
