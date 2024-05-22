@@ -9,7 +9,7 @@
         <!-- nav -->
         <div class="w-full h-fit grid pr-8 gap-4 text-[16px] md:text-[18px]">
             <!-- logo -->
-            <img src="../../assets/images/logo.png" alt="Xcell Logo" class="w-[72px] h-[72px]">
+            <a href="/"><img src="../../assets/images/logo.png" alt="Xcell Logo" class="w-[72px] h-[72px]"></a>
 
             <div class="my-6 w-fit h-fit flex items-center gap-4">
                 <Icon icon="mdi:phone" height="24px" class="" />
@@ -85,11 +85,13 @@
                 <a href="/coming-soon">Content</a>
             </div>
             
-            <!-- menues -->
+            <!-- middle image -->
             <div class="w-full grid items-center justify-items-center text-center font-semibold text-[14px] md:text-[19px] xl:text-[22px]">
-                <img src="../../assets/images/logo.png" alt="Xcell Logo" class="w-[72px] h-[72px] md:hidden">
+                <!-- mobile -->
+                <a href="/"><img src="../../assets/images/logo.png" alt="Xcell Logo" class="w-[72px] h-[72px] md:hidden"></a>
+                
+                <!-- desktop -->
                 <div class="w-fit h-fit grid items-center justify-items-center">
-                    <!-- <a href="/" class="hidden md:block font-beb absolute text-custom-black">Xcell Jiu Jitsu Academy</a> -->
                     <a href="/"><img src="../../assets/images/nav_logo_bebas.png" alt="Xcell Logo" class="hidden md:block h-[75px] lg:h-[90px]"></a>
                 </div>
             </div>
@@ -152,7 +154,7 @@ export default {
                     click: () => {
 
                     },
-                    href: "#"
+                    href: "/class-schedule"
                 }
             ],
 

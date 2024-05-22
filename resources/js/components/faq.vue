@@ -1,12 +1,12 @@
 <template>
     <!-- FAQ -->
     <div :class="transparent_bg ? 'bg-transparent' : 'bg-custom-light'" class="w-full h-fit grid py-6 md:py-12">
-        <div class="w-[85%] md:w-[70%] xl:w-[50%] h-fit mx-auto grid">
+        <div class="w-[95%] md:w-[70%] xl:w-[50%] h-fit mx-auto grid">
             <p class="text-[22px] md:text-[36px] xl:text-[48px] font-bebas text-center">Frequently Asked Questions</p>
 
             <!-- questions -->
-            <div class="w-full h-fit grid my-8 p-6 bg-white rounded-[2px]">
-                <div class="w-full h-fit grid gap-6">
+            <div class="w-full h-fit grid my:4 md:my-8 p-6 bg-white rounded-[2px]">
+                <div class="w-full h-fit grid gap-4 md:gap-6">
                     <div v-for="(question, index) in questions" :key="index" class="w-full h-fit grid relative">
                         <div class="w-full h-fit grid items-center relative">
                             <!-- question -->

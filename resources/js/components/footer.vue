@@ -63,7 +63,7 @@
     <div class="w-full h-fit grid gap-4 md:gap-0 py-8 md:py-4 justify-items-center md:justify-items-start items-center lg:grid-cols-2 text-custom-gray text-[14px]">
         <!-- left side -->
         <div class="w-fit lg:w-full grid mx-auto lg:mx-0 md:flex md:items-center justify-items-center md:justify-items-start gap-6">
-            <img src="../../assets/images/logo.png" alt="Xcell Logo" class="h-[55px] w-[55px] mx-auto md:mx-0">
+            <a href="/"><img src="../../assets/images/logo.png" alt="Xcell Logo" class="h-[55px] w-[55px] mx-auto md:mx-0"></a>
 
             <div class="w-fit h-fit flex items-center gap-6">
                 <p @click="changeType" class="cursor-pointer">{{ type == 'request' ? 'Subscribe' : 'Contact' }}</p>

@@ -4,7 +4,7 @@
             <Navbar @contact="gotoContactRequest" />
 
             <!-- mobile hero -->
-            <div class="w-full h-[500px] grid md:hidden relative overflow-clip rounded-[4px]">
+            <div @click="mobileHeroClick(hero)" class="w-full h-[500px] grid md:hidden relative overflow-clip rounded-[4px]">
                 <div class="w-full h-full absolute z-10 top-0 left-0 grid bg-custom-black/10">
                     <div class="m-auto w-[65%] h-fit grid">
                         <p class="text-[28px] text-white text-center font-bebas"> {{ hero == 1 ? 'Merchandise' : ( hero == 2 ? 'Adult BJJ' : 'Kids BJJ' ) }} </p>
@@ -64,22 +64,6 @@
                     <img src="../../assets/images/kids_class.jpg" alt="Kids BJJ" class="object-cover w-full h-full group-hover:scale-105 transition-all duration-700 z-0">
                 </button>
             </div>
-
-            <!-- free trial -->
-            <!-- <div class="w-full h-fit flex items-center gap-12 relative my-16">
-                <img src="../../assets/images/logo.png" alt="Xcell Logo">
-
-                <div class="w-fit h-fit grid">
-                    <p class="uppercase font-medium text-[36px] font-bebas">Free Trial Class!</p>
-                    <p class="text-[24px]">Brazilian Jiu Jutsu, No-Gi, Self-Defense, Kids Class, Adult Class.</p>
-                    <p>Visit us and start your Brazilian Jiu Jutsu journey learning from world-class instruction.</p>
-                </div> 
-
-                <button class="uppercase flex itmes-center gap-4 border-custom-black text-custom-black text-[18px] right-0 absolute px-10 py-2 rounded-[4px] shadow-newdrop hover:animate-vibrate-animate border-[1px]">
-                    <Icon icon="openmoji:calendar" height="32px" />
-                    <p>Schedule Now!</p>
-                </button>
-            </div> -->
             
             <!-- other free trial -->
             <div class="py-6 lg:py-16 grid bg-custom-light">
@@ -177,6 +161,21 @@ export default {
             setTimeout(() => {
                 this.nextHero(this.hero);
             }, 5000);
+        },
+        mobileHeroClick(index){
+            switch(index){
+                case 1:
+                    this.$router.push({name: "Coming Soon"});
+                    break;
+                case 2:
+                    this.$router.push({name: "Adult BJJ"});
+                    break;
+                case 3:
+                    this.$router.push({name: "Kids BJJ"});
+                    break;
+                default:
+                    break;
+            }
         },
 
         gotoContactRequest(){

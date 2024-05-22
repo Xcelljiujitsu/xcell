@@ -4,6 +4,7 @@ import Home from "./views/Home.vue";
 import ComingSoon from "./views/ComingSoon.vue";
 import NotFound from "./views/404.vue";
 
+import ClassSchedule from './views/ClassSchedule.vue';
 import AdultBJJ from './views/Adult.vue';
 import KidsBJJ from './views/Kids.vue';
 
@@ -22,6 +23,14 @@ const routes = [
         path: "/coming-soon",
         name: "Coming Soon",
         component: ComingSoon,
+    },
+    {
+        path: "/class-schedule",
+        name: "Class Schedule",
+        component: ClassSchedule,
+        meta: {
+            title: "Class Schedule"
+        }
     },
     {
         path: "/adult-brazilian-jiu-jitsu",
